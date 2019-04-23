@@ -1,0 +1,11 @@
+# Assemblies compared
+### file format should be fasta format
+$ASSEMBLY1=Assembly1.fa
+$ASSEMBLY2=Assembly2.fa
+
+# Resolution lists (Comma-separated)
+$RESOLUTION=10000,20000,30000,40000,50000
+
+# Alignment strictness 
+### Option: self, near(default), medium, far
+$STRICT=near

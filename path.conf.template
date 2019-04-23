@@ -1,0 +1,19 @@
+#####################################################
+############# Path of third party tools #############
+#####################################################
+
+## LASTZ (http://www.bx.psu.edu/~rsharris/lastz/)
+lastz=
+
+############# Kent utilities directory ##############
+## Kent utilities (http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/)
+## Ten kent tools must be prepared in the Kent utilities directory (below)
+### axtChain         chainMergeSort  chainSwap  faSplit     lavToPsl
+### chainAntiRepeat  chainNet        faSize     faToTwoBit  netSyntenic
+kent=
+
+############# Make blocks ##############
+makeBlocks=
+
+## bedtools (https://bedtools.readthedocs.io/en/latest/index.html)
+bedtools=
