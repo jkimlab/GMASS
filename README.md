@@ -14,6 +14,15 @@ perl calculateGMASS.pl -p example/params.txt
 ```
 Install package
 ----------------
+### System requirement
+   - Linux x64 (Tested in CentOS 6.9, CentOS 6.10, Ubuntu 16.04 and Ubuntu 18.04)  
+   - Perl >= 5.10
+   - Perl modules  
+      - Switch
+      - Parallel::ForkManager
+   - GCC >= 4.4.7
+   - zlib >= 1.2.8
+   
 To install the package for calculating GMASS score,
 ```
 git clone https://github.com/jkimlab/GMASS.git
