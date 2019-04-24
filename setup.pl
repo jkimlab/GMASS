@@ -33,7 +33,7 @@ if($mode eq "install"){
 	system "sed -i \"s|^lastz=\.*|lastz=$lastz_dir/src/lastz|\" $install_dir/path.conf";
 	system "sed -i \"s|^makeBlocks=\.*|makeBlocks=$makeBlocks_dir|\" $install_dir/path.conf";
 	system "sed -i \"s|^kent=\.*|kent=$kent_dir|\" $install_dir/path.conf";
-	system "sed -i \"s|^bedtools=\.*|bedtools=$bedtools_dir|\" $install_dir/path.conf";
+	system "sed -i \"s|^bedtools=\.*|bedtools=$bedtools_dir/bin/bedtools|\" $install_dir/path.conf";
 }elsif($mode eq "uninstall"){
 	system "rm -f path.conf";
 
