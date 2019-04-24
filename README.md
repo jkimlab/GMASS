@@ -10,7 +10,7 @@ Quick start
 git clone https://github.com/jkimlab/GMASS.git 
 cd GMASS
 perl setup.pl install
-perl calculateGMASS.pl -p example/params.txt 
+perl calculateGMASS.pl -p example/params.txt -o outdir
 ```
 Install package
 ----------------
@@ -31,7 +31,7 @@ perl setup.pl install
 ``` 
 User can test whether the package is installed properly as
 ```
-perl calculateGMASSS.pl -p example/params.txt
+perl calculateGMASSS.pl -p example/params.txt -o outdir
 ```
 User can also uninstall this package as
 ```
