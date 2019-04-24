@@ -2,6 +2,8 @@ GMASS
 =================
 The GMASS score is a novel measure for representing structural similarity between two assemblies. It represents the structural similarity of a pair of assemblies based on the length and number of similar genomic regions defined as consensus segment blocks (CSBs) in the assemblies.
 
+![GMASS_diagram](https://user-images.githubusercontent.com/19523543/56632912-fa2ea800-6696-11e9-939d-7b9906c16aa0.jpg)
+
 Quick start
 ----------------
 ``` 
