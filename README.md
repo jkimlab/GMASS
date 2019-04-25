@@ -21,7 +21,7 @@ Install package
       - Switch
       - Parallel::ForkManager
    - GCC >= 4.4.7
-   - zlib >= 1.2.8
+   - zlib >= 1.2.7
    
 To install the package for calculating GMASS score,
 ```
