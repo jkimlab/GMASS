@@ -163,7 +163,7 @@ my $tar_name = basename($tar_fa, @suffixlist);
 
 my $resols = join(",", @resolutions);
 
-my $aln_cmd = "$script_dir/whole_genome_alignment.pl --path $script_dir/path.conf -p $core -res $resolutions[0] -r $ref_fa -t $tar_fa -d $distance -o $output_dir/chainNet >& $output_dir/aln.log";
+my $aln_cmd = "$script_dir/whole_genome_alignment.pl --path $script_dir/path.conf -p $core -res $resolutions[0] -r $ref_fa -t $tar_fa -d $distance -o $output_dir/chainNet 2> $output_dir/aln.log";
 my $bld_CSB_cmd = "$script_dir/build_synteny.pl --path $script_dir/path.conf -c $output_dir/chainNet -m $resols -r $ref_name -t $tar_name -o $output_dir/CSB";
 
 print STDERR "$bld_CSB_cmd\n";
