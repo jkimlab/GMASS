@@ -38,7 +38,7 @@ while (<PATH>){
 	next if /""/;
 	my ($program, $path) = split (/=/, $_);
 	switch($program){
-		case("kent"){   $kent_src = $path;  }
+		case("makeBlocks"){   $kent_src = $path;  }
 	}
 }
 close PATH;
