@@ -24,11 +24,17 @@ my $bedtools_dir = "$install_dir/src/bedtools2";
 
 if($mode eq "install"){
 	system "tar xvzf $install_dir/src.tar.gz";
+	system "rm -rf $install_dir/src.tar.gz";
 
 	system "make -C $lastz_dir";
 	system "make -C $makeBlocks_dir";
 	system "make -C $bedtools_dir";
 	
+	`mkdir -p $kent_dir`;
+	foreach my $src("axtChain","chainMergeSort","chainSwap","faSplit","lavToPsl","chainAntiRepeat","chainNet","faSize","faToTwoBit","netSyntenic"){
+		system "rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/$src $kent_dir";
+	}
+
 	system "cp path.conf.template path.conf";
 	system "sed -i \"s|^lastz=\.*|lastz=$lastz_dir/src/lastz|\" $install_dir/path.conf";
 	system "sed -i \"s|^makeBlocks=\.*|makeBlocks=$makeBlocks_dir|\" $install_dir/path.conf";
@@ -37,12 +43,13 @@ if($mode eq "install"){
 }elsif($mode eq "uninstall"){
 	system "rm -f path.conf";
 
+	system "rm -rf $kent_dir";
 	system "make clean -C $lastz_dir";
 	system "make clean -C $makeBlocks_dir";
 	system "make clean -C $bedtools_dir";
 	
-	system "tar cvzf $install_dir/src.tar.gz";
-	system "rm -rf src";
+	system "tar cvzf $install_dir/src.tar.gz src";
+	system "rm -rf $install_dir/src";
 }else{
 	my $src = basename($0);
 	print STDERR "[Error] Incorrect command\n";
