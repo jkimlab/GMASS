@@ -386,8 +386,8 @@ sub CHECK_INPUT{
 		$pass = 0;
 	}
 
-	if($core !~ /^\d+?$/){
-		print STDERR "[Error] Strange value $core for core count\n";
+	if($core == 0){
+		print STDERR "[Error] Check the core count\n";
 		$pass = 0;
 	}
 
@@ -400,6 +400,9 @@ sub CHECK_INPUT{
 		print STDERR " -Alignment strictness: $distance\n";
 		print STDERR " -cpu: $core\n";
 	}else{
+		print "\n";
+		HELP();
+
 		exit;
 	}
 }
