@@ -16,6 +16,7 @@ my $merge;
 my $pe;
 my $help;
 my $bedtools_cmd;
+my $path_conf;
 GetOptions (
 	"path|p=s" => \$path_conf,
 	"syn|s=s" => \$conserved_segments_F,
