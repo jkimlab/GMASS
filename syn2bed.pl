@@ -8,6 +8,7 @@ use warnings;
 use Sort::Key::Natural 'natsort';
 use File::Basename;
 use Getopt::Long qw(:config no_ignore_case);
+use Switch;
 
 my $conserved_segments_F;
 my $out_dir;
@@ -39,18 +40,17 @@ Usage: syn2bed.pl <parameter(optional)> -s [Conserved.Segments file]
 ";
 	exit(1);
 }
-
-open PATH, "$path_conf";
+open(PATH, "$path_conf");
 while (<PATH>){
     chomp;
     next if /^#/;
     next if /""/;
     my ($program, $path) = split (/=/, $_);
     switch($program){
-        case("bedtools"){   $bedtools_cmd = $path;  }
+	case("bedtools") {$bedtools_cmd = $path;}
     }
 }
-close PATH;
+close(PATH);
 
 if(!$out_dir){
 	$out_dir = dirname($conserved_segments_F);
