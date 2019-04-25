@@ -15,7 +15,9 @@ my $sort;
 my $merge;
 my $pe;
 my $help;
+my $bedtools_cmd;
 GetOptions (
+	"path|p=s" => \$path_conf,
 	"syn|s=s" => \$conserved_segments_F,
 	"sort" => \$sort,
 	"merge" => \$merge,
@@ -36,6 +38,18 @@ Usage: syn2bed.pl <parameter(optional)> -s [Conserved.Segments file]
 ";
 	exit(1);
 }
+
+open PATH, "$path_conf";
+while (<PATH>){
+    chomp;
+    next if /^#/;
+    next if /""/;
+    my ($program, $path) = split (/=/, $_);
+    switch($program){
+        case("bedtools"){   $bedtools_cmd = $path;  }
+    }
+}
+close PATH;
 
 if(!$out_dir){
 	$out_dir = dirname($conserved_segments_F);
@@ -100,10 +114,10 @@ foreach my $spc (keys %hs)
 	close(W);
 
 	if($merge){
-		`bedtools sort -i $out_dir/tmp.$spc.bed > $out_dir/tmp.$spc.sorted.bed`;
-		`bedtools merge -i $out_dir/tmp.$spc.sorted.bed > $out_dir/$spc.bed`;
+		`$bedtools_cmd sort -i $out_dir/tmp.$spc.bed > $out_dir/tmp.$spc.sorted.bed`;
+		`$bedtools_cmd merge -i $out_dir/tmp.$spc.sorted.bed > $out_dir/$spc.bed`;
 	} elsif($sort){
-		`bedtools sort -i $out_dir/tmp.$spc.bed > $out_dir/$spc.bed`;
+		`$bedtools_cmd sort -i $out_dir/tmp.$spc.bed > $out_dir/$spc.bed`;
 	} else {
 		`cp $out_dir/tmp.$spc.bed $out_dir/$spc.bed`;
 	}

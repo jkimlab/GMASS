@@ -20,6 +20,7 @@ Install package
    - Perl modules  
       - Switch
       - Parallel::ForkManager
+	  - Sort::Key::Natural
    - GCC >= 4.4.7
    - zlib >= 1.2.7
    - glib 2.14

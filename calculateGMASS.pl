@@ -229,7 +229,7 @@ foreach my $res(@resolutions){
 		my $calc_genomecov_ref = "$bedtools_path genomecov -i $ref_name.bed -g $output_dir/data/$ref_name.size > $ref_name.genomecov"; 
 		my $calc_genomecov_tar = "$bedtools_path genomecov -i $tar_name.bed -g $output_dir/data/$tar_name.size > $tar_name.genomecov"; 
 	
-		`$script_dir/syn2bed.pl --sort --merge -s Conserved.Segments`;
+		`$script_dir/syn2bed.pl --path $script_dir/path.conf --sort --merge -s Conserved.Segments`;
 		system $calc_genomecov_ref; 
 		system $calc_genomecov_tar; 
 
