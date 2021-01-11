@@ -158,6 +158,11 @@ Third party tools
 - LASTZ (http://www.bx.psu.edu/~rsharris/lastz/)  
 - inferCars (http://www.bx.psu.edu/miller_lab/car/)   
 
+How to cite
+-----------
+Kwon D, Lee J, Kim J. GMASS: a novel measure for genome assembly structural similarity. BMC Bioinformatics. 2019 Mar 18;20(1):147. doi: 10.1186/s12859-019-2710-z.
+
+
 Contact
 -------------------
 bioinfolabkr@gmail.com
